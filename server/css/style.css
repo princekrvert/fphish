@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900);/*!
+ * IE10 viewport hack for Surface/desktop Windows 8 bug
+ * Copyright 2014-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */@-webkit-viewport{width:device-width}@-moz-viewport{width:device-width}@-ms-viewport{width:device-width}@-o-viewport{width:device-width}@viewport{width:device-width}body{font-family:'Roboto', sans-serif;background-color:#019875}.heading{text-align:center;margin:30px auto;color:white}.heading h1{margin:0 0 15px 0;padding:0;font-weight:900;text-transform:uppercase}footer.footer{text-align:center;padding:30px 0}footer.footer p.text-muted{color:white}a.game{text-decoration:none;color:black;background-color:white;display:block;padding:15px;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;margin:15px auto;text-align:center;border:2px solid white}a.game img{width:250px;max-width:100%}a.game p.title{font-weight:300;margin:15px 0 0 0;font-size:24px}a.game:hover{background-color:#eee}nav.navbar.navbar-default{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+/*# sourceMappingURL=style.css.map */
+a.game img {
+  height: 110px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.bgterms{
+  background-color:#fff;
+  border-radius: 10px;
+}
+
+.contact{
+  background-color:#fff;
+  border-radius: 10px;
+}
+
+#contact_form{
+  padding:20px;
+}
