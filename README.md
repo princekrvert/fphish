@@ -12,6 +12,17 @@
 ![fphish](https://user-images.githubusercontent.com/56459297/153333346-e05b9695-e59a-4931-91e4-68f4657fbff9.png)
 
 ## termux installation 
+*`apt update && apt upgrade`
+
+*`git clone https://github.com/princekrvert/fphish.git`
+
+*`cd fphish`
+
+*`chmod +x *`
+
+*`./fphish.sh`
+### this tool is made for testing . I am not responsible for any illegal activity
+
 
 
 
