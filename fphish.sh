@@ -15,7 +15,7 @@ user_intrupt(){
 banner(){
     clear
     echo -ne "≋f≋p≋h≋i≋s≋h≋ "
-    echo -ne "\033[0;1m MADE BY PRINCE"
+    echo -e "\033[0;1m MADE BY PRINCE"
 }
 req(){
     command -v php 2>&1 > /dev/null || { echo -e "\033[31;1m Installing php" ;apt-get install php; } 
