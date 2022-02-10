@@ -11,4 +11,7 @@
 
 ![fphish](https://user-images.githubusercontent.com/56459297/153333346-e05b9695-e59a-4931-91e4-68f4657fbff9.png)
 
+## termux installation 
+
+
 
