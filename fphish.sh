@@ -18,7 +18,20 @@ banner(){
     echo -e "\033[0;1m MADE BY PRINCE"
 }
 req(){
-    command -v php 2>&1 > /dev/null || { echo -e "\033[31;1m Installing php" ;apt-get install php; } 
+    printf "${r}_______ ${p} checking for requirements ${r}_______\n"
+	# CHECK if this is termux or not 
+	if [[ -d "/data/data/com.termux/files/home" ]];then
+	if [[ `command -v proot` ]];then 
+	echo ""
+	else
+	echo -e "${g}+++++${y}Installing proot${g}+++++" 
+	 pkg install proot resolv-conf -y
+	 fi
+	 fi
+	command -v php 2>&1 > /dev/null || { echo -e "${g}+++++${y}Installing php${g}+++++" ; apt-get install php -y; }
+	command -v curl 2>&1 > /dev/null || { echo -e  "${g}+++++${y}Installing curl${g}+++++" ; apt-get install curl -y ; }
+    command -v unzip 2>&1 > /dev/null || { echo -e "${g}+++++${y}Installing unzip${g}+++++" ; apt-get install unzip -y ;}
+	command -v wget 2>&1 > /dev/null || { echo -e "${g}+++++${y}Installing wget${g}+++++" ; apt-get install wget -y ; }
 }
 req
 banner
