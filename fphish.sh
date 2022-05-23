@@ -69,13 +69,13 @@ start_cloud(){
     # now ask the url 
 	ran=$((RANDOM % 100))
     echo -e "\e[34;1m [~] Starting php server : "
-    php -S 127.0.0.1:8888 -t .pweb > /dev/null 2>&1 & sleep 4
+    php -S 127.0.0.1:88${ran} -t .pweb > /dev/null 2>&1 & sleep 4
     echo -e "\e[0;1m Starting clodflare.. "
     #check fi it is termux or not ..$link
     if [[ `command -v termux-chroot` ]];then
-    sleep 3 && termux-chroot ./cloudflare tunnel -url http://127.0.0.1:88$ran --logfile .pk.txt > /dev/null 2>&1 & #throw all the process in background .. 
+    sleep 3 && termux-chroot ./cloudflare tunnel -url http://127.0.0.1:88${ran} --logfile .pk.txt > /dev/null 2>&1 & #throw all the process in background .. 
     else
-    sleep 3 && ./cloudflare tunnel -url http://127.0.0.1:88$ran --logfile .pk.txt > /dev/null 2>&1 & 
+    sleep 3 && ./cloudflare tunnel -url http://127.0.0.1:88${ran} --logfile .pk.txt > /dev/null 2>&1 & 
     fi
     # now extract the link from the logfile .. 
     sleep 8
@@ -83,7 +83,6 @@ start_cloud(){
     banner
     echo -ne "\e[36;1m Link: "
     cat .pk.txt | grep "trycloudflare" | cut -d "|" -f2 | cut -d "}" -f2 
-	user_data
 }
 #make a function to download the cloudflared 
 download(){
