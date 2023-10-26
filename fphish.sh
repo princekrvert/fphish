@@ -53,8 +53,20 @@ hidden(){
 hidden 
 # now move the all content to this folder 
 mov(){
+	# Ask for theh the template
+	echo -e "\033[32;1m Choose the server "
+	echo -ne "\033[31;1m[01] \033[33;1m  Old\n"
+	echo -ne "\033[31;1m[02] \033[33;1m  New\n"
+	read u_option # reading for user options 
+	if [[ $u_option == "1" ]] || [[ $u_option == "01" ]];then
+	cp -R server1/* .pweb > /dev/null
+	elif  [[ $u_option == "2" ]] || [[ $u_option == "02" ]];then
     cp -R server/* .pweb > /dev/null 
-}
+	else 
+	echo -ne "\033[31;1m Invalid options"
+	exit 1
+	fi	
+	}
 mov
 # now make a function to start localhost 
 localserver(){
