@@ -1,0 +1,43 @@
+.btn_fb{
+    background: url(../imgg/logo-facebook.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px 10px 0;
+}
+.btn_vk {
+    background: url(../imgg/logo-vk.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px 10px 0;
+}
+.loading {
+    background: url(../imgg/loading.gif) no-repeat 0 0;
+    background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+}
+.pass_c {
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+    display: inline-block;
+    width: 68px;
+}
+.dash {
+    margin: 0 10px;
+}
+.serial-form {
+    margin-bottom: 15px;
+}
+.gamelogo {
+    width: 100%;
+    height: auto;
+}
+.garenalogo {
+    width: 80%;
+    height: auto;
+    margin-left: 62%;
+}

